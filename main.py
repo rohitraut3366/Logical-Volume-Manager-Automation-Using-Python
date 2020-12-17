@@ -21,9 +21,8 @@ if auth_type.lower() == "key":
 elif auth_type.lower() == "password" or auth_type.lower() == "pass":
     print("Setting Up environment please wait")
     subprocess.getoutput("yum install sshpass -y")
-    password = input("Enter password: ")
+    password = getpass.getpass("Enter user password: ")
     authTypePass(username, password, ipAddress)
 else:
     print("Not Valid")
     exit()
-
